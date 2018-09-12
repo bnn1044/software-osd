@@ -193,6 +193,7 @@ ASFLAGS     = $(ARCH_FLAGS) \
 ifeq ($(LD_FLAGS),)
 LD_FLAGS     = -lm \
               -nostartfiles \
+              -nostdlib \
               --specs=nano.specs \
               -lc \
               -lnosys \

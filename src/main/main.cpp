@@ -1,4 +1,7 @@
 #include "target.h"
+#include "stm32f3xx_ll_bus.h"
+#include "stm32f3xx_ll_comp.h"
+#include "stm32f3xx_ll_gpio.h"
 
 /* Private variables ---------------------------------------------------------*/
 LL_GPIO_InitTypeDef     GPIO_InitStructureE;
