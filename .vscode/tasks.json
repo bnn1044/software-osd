@@ -1,0 +1,107 @@
+{
+    "version": "2.0.0",
+    "type": "process",
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+    },
+    "windows": {
+        "options": {
+            "env": { "Path":"c:\\cygwin64\\bin;c:\\ARMTC\\gcc\\bin;%Path%" }    
+        }
+    },
+    "tasks": [
+        {
+            "taskName": "make STM32F3_DISCOVERY" ,
+            "windows": {
+                "command": "make.exe",
+                "args": [
+                    "TARGET=STM32F3_DISCOVERY",
+                    "DEBUG=GDB"
+                ]
+            },
+            "osx": {
+                "command": "make",
+                "args": [
+                    "TARGET=STM32F3_DISCOVERY",
+                    "DEBUG=GDB"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+    
+            "taskName":  "make STM32F3_DISCOVERY",
+            "windows": {
+                "command": "make.exe",
+                "args": [
+                    "TARGET=STM32F3_DISCOVERY",
+                    "DEBUG=GDB"
+                ]
+            },
+            "osx": {
+                "command": "make",
+                "args": [
+                    "TARGET=STM32F3_DISCOVERY",
+                    "DEBUG=GDB"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "taskName": "clean STM32F3_DISCOVERY",
+            "windows": {
+                "command": "make.exe",
+                "args": [
+                    "TARGET=STM32F3_DISCOVERY",
+                    "clean"
+                ]
+            },
+            "osx": {
+                "command": "make",
+                "args": [
+                    "TARGET=STM32F3_DISCOVERY",
+                    "clean"
+                ]
+            },            
+            "problemMatcher": []
+        }
+    ]
+}
