@@ -9,10 +9,9 @@ LL_GPIO_InitTypeDef			GPIO_InitStructureA;
 
 LL_COMP_InitTypeDef			SyncComp;
 
-static __IO uint32_t i;
 static __IO uint32_t TimingDelay;
 /* Private function prototypes -----------------------------------------------*/
-void Delay(__IO uint32_t nTime);
+void Delay(uint32_t nTime);
 
 
 int main(void)
@@ -96,20 +95,20 @@ int main(void)
 		Delay(50);
 	}
 }
-void Delay(__IO uint32_t nTime)
+void Delay(const uint32_t nTime)
 {
 	TimingDelay = nTime;
-	while (TimingDelay != 0);
+	while (TimingDelay != 0) {}
 }
+
 /**
 * @brief  Decrements the TimingDelay variable.
 * @param  None
 * @retval None
 */
-void TimingDelay_Decrement(void)
+extern "C" void SysTick_Handler(void)
 {
-	if (TimingDelay != 0x00)
-	{
-		TimingDelay--;
+	if (TimingDelay != 0x00) {
+		--TimingDelay;
 	}
 }
