@@ -183,7 +183,7 @@ CFLAGS_BASE   = $(ARCH_FLAGS) \
               $(EXTRA_FLAGS)
 
 CFLAGS		+= $(CFLAGS_BASE) -std=gnu11
-CXXFLAGS	+= $(CFLAGS_BASE) -std=gnu++17
+CXXFLAGS	+= $(CFLAGS_BASE) -std=gnu++17 -fno-exceptions
 
 ASFLAGS     = $(ARCH_FLAGS) \
               -x assembler-with-cpp \
